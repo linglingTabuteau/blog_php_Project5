@@ -1,0 +1,17 @@
+.Accueil {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+}
+.About {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+.CardText {
+  padding-right: 15px;
+}
+
+.Formulaire {
+  margin: 20px;
+}
