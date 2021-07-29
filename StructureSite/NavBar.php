@@ -14,7 +14,7 @@
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
         <a class="nav-link" href="/BlogPosts.php">Blog Posts</a>
-        <a class="nav-link" href="/Admins/Signup.php">Se connecter</a>
+        <a class="nav-link" href="/Admin/Signin.php">Se connecter</a>
       </div>
       </form>
     </div>

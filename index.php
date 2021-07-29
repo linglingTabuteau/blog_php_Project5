@@ -10,7 +10,6 @@
   </head>
   <body>
   <p>
-    Cette page ne contient que du HTML.<br />
     Veuillez taper votre prénom :
   </p>
   <form action="accueil.php" method="post">
