@@ -12,7 +12,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Acceuil</a>
+        <a class="nav-link active" href="/Accueil.php" href="#">Acceuil</a>
         <a class="nav-link" href="/BlogPosts.php">Blog Posts</a>
         <a class="nav-link" href="/Admin/Signin.php">Se connecter</a>
       </div>

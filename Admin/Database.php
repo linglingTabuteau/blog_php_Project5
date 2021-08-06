@@ -9,13 +9,14 @@
     <?php
 include '../StructureSite/NavBar.php'
 ?>
-    <h1>Sign In</h1>
-        <form action="InterfaceAdmin.php" method="post">
-            <p>
-            <input type="password" name="mot_de_passe" />
-            <input type="submit" value="CONNECTER" />
-            </p>
-        </form>
-        <a class="nav-link" href="/Admin/Signup.php">Créer un compte</a>
+    <h1>Database Liste de Comptes</h1>
+       <div>
+       <p>welcome</p>
+       <?php
+       $mdp = $_POST["password"];
+     echo  '<p>First Name : '.$_POST["first_name"].'</p>Laste Name : '.$_POST["last_name"]. '</p><p>Mot de pass en clair:</p>'.$mdp.
+     '<p>Mot de pass en crypté : '.password_hash($mdp, PASSWORD_DEFAULT).'</p>';
+        ?>
+       </div>
     </body>
 </html>
