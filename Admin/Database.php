@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,16 +8,27 @@
     </head>
     <body>
     <?php
-include '../StructureSite/NavBar.php'
-?>
+    include '../StructureSite/NavBar.php'
+    ?>
+    
     <h1>Database Liste de Comptes</h1>
        <div>
-       <p>welcome</p>
-       <?php
-       $mdp = $_POST["password"];
-     echo  '<p>First Name : '.$_POST["first_name"].'</p>Laste Name : '.$_POST["last_name"]. '</p><p>Mot de pass en clair:</p>'.$mdp.
+     <?php 
+        $mdp = $_POST["password"];
+        var_dump($_POST);
+        if (isset($_POST['password']) &&  $_POST['password'] == $_POST['confirm_password']) {
+    // on enregistre les données dans la BDD
+     echo 'les deux mot de passe  sont bon';
+     echo  '<p>Welcome '.$_POST["first_name"].' '.$_POST["last_name"]. '</p><p>Mot de pass en clair:</p>'.$mdp.
      '<p>Mot de pass en crypté : '.password_hash($mdp, PASSWORD_DEFAULT).'</p>';
-        ?>
+     unset($_SESSION['signup_form']);
+} else {
+    $_SESSION['signup_form'] = [
+        'errors' => ['password' => 'Les deux mot de passe ne corresponde pas']
+    ];
+    // rediréger vers la page Signup.php
+    header("Location: Signup.php");
+} ?>
        </div>
     </body>
 </html>

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,19 +11,8 @@
     <?php
 include '../StructureSite/NavBar.php'
 ?>
-    <h1>Sign Up</h1>
-        <form action="Database.php" method="post">
-            <p>
-            <input type="text" name="last_name" placeholder="LAST NAME" required="required"/>
-            <input type="text" name="first_name" placeholder="FIRST NAME" required="required"/>
-            <input type="email" name="email" placeholder="EMAIL" required="required"/>
-            <input type="password" name="password" placeholder="PASSWORD" required="required"/>
-            <input type="password" name="password" placeholder="PASSWORD" required="required"/>
-            <input type="submit" value="CRÉER UN COMPTE" />
-            </p>
-        </form>
-        <div class="signup-form">
-    <form action="/examples/actions/confirmation.php" method="post" data-bitwarden-watching="1">
+<div class="signup-form">
+    <form action="Database.php" method="post">
 		<h2>Sign Up</h2>
 		<p>Please fill in this form to create an account!</p>
 		<hr>
@@ -39,7 +29,12 @@ include '../StructureSite/NavBar.php'
             <input type="password" class="form-control" name="password" placeholder="Password" required="required">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+            <input type="password" class="form-control <?php if(isset($_SESSION["signup_form"])){ echo 'is-invalid';} ?>" name="confirm_password" placeholder="Confirm Password" required="required"
+
+            >
+            <?php if(isset($_SESSION['signup_form']['errors']['password'])){
+                echo $_SESSION['signup_form']['errors']['password'];
+            }?>
         </div>        
         <div class="form-group">
 			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
@@ -48,7 +43,8 @@ include '../StructureSite/NavBar.php'
             <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
         </div>
     </form>
-	<div class="hint-text">Already have an account? <a href="#">Login here</a></div>
+	<div class="hint-text">Already have an account? <a href="Signin.php">Login here</a></div>
 </div>
     </body>
 </html>
+<!-- <?php var_dump($_SESSION); ?> -->
